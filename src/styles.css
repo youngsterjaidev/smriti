@@ -7,3 +7,7 @@
     var(--brand-lightness)
   );
 }
+
+:global * {
+  background-color: red;
+}

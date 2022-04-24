@@ -13,6 +13,14 @@
     -->
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
     <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
     <!--
       Notice the use of %PUBLIC_URL% in the tags above.
       It will be replaced with the URL of the `public` folder during the build.
@@ -28,12 +36,13 @@
         margin: 0;
         padding: 0;
         box-sizing: border-box;
+        font-family: 'Oswald', sans-serif;
       }
 
       * {
-        --brand-hue: 200;
-        --brand-saturation: 100%;
-        --brand-lightness: 50%;
+        --brand-hue: 204;
+        --brand-saturation: 14%;
+        --brand-lightness: 38%;
         --brand-light: hsl(
           var(--brand-hue),
           var(--brand-saturation),
@@ -57,33 +66,35 @@
         --surface2-dark: hsl(var(--brand-hue) 10% 15%);
         --surface3-dark: hsl(var(--brand-hue) 5% 20%);
         --surface4-dark: hsl(var(--brand-hue) 5% 25%);
-      }
 
-      :root {
         --brand: var(--brand-light);
         --text1: var(--text1-light);
         --text2: var(--text1-light);
         --surface1: var(--surface1-light);
+        --surface2: var(--surface2-light);
+        --surface3: var(--surface3-light);
+        --surface4: var(--surface4-light);
+        --border-radius: 0.5em;
       }
 
-      [color-scheme='light'] {
-        color-scheme: light;
-        --brand: var(--brand-light);
-        --text1: var(--text1-light);
-        --text2: var(--text1-light);
-        --surface1: var(--surface1-light);
+      [type='button'] {
+        padding: 0.6em 1.2em;
+        border: none;
+        background-color: var(--brand);
+        display: block;
+        border-radius: var(--border-radius);
+        color: var(--surface2);
       }
 
-      [color-scheme='dark'] {
-        color-scheme: dark;
-        --brand: var(--brand-dark);
-        --text1: var(--text1-dark);
-        --text2: var(--text1-dark);
-        --surface1: var(--surface1-light);
+      [type='button']:hover {
+        cursor: pointer;
       }
 
-      html {
-        background-color: var(--surface1);
+      input {
+        padding: 0.5em 0.8em;
+        margin: 0em 0.5em;
+        border-radius: var(--border-radius);
+        border: 1px solid var(--surface1);
       }
     </style>
     <title>React App</title>
